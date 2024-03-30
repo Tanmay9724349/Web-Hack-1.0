@@ -1,0 +1,93 @@
+/* style for menu button*/
+
+.four:hover{
+  background-image: linear-gradient(to left, rgb(10, 129, 113) , rgb(121, 224, 250));
+  box-shadow: 5px 5px 5px 5px rgb(101, 102, 102);
+}
+/*style of logo*/
+.logo{
+  height: 10vh;
+  width: 10vh;
+  border-radius: 10px;
+  box-shadow: 5px 3px 8px #888888;
+}
+/* style for title*/
+.name{
+  font-size: 40px;
+  margin-left: 2%;
+  margin-right:8% ;
+  font-family: "Rubik Bubbles", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+ a .free{
+    color:rgb(110, 230, 235);
+}
+/*styling elements of menu*/
+li{
+  margin:30px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.menu:hover{
+    text-shadow:2px 2px rgb(6, 111, 122);
+
+}
+/*footer*/
+.foot{
+    background-image: linear-gradient(to left, rgb(10, 129, 113) , rgb(121, 224, 250));
+    color:rgb(14, 6, 82);
+    text-align: center;
+    font-size: 2.5vh;
+    margin: 0;
+}
+/*heading of footer*/
+.foot h1{
+    font-size: 5vh;
+}
+/*all columns of footer*/
+.col{
+    margin-bottom: 2vh;
+    margin-right:2vh;
+    margin-right: 0;
+    margin-left: 0;
+}
+/*style for icons*/
+i{
+    margin: 6%;
+    font-size: 5vh;
+    color: black;
+    
+    
+}
+/*hover on icon*/
+.l1:hover{
+    font-size:5.1vh;
+    text-shadow:2px 2px blueviolet;
+
+}
+.l2:hover{
+    font-size:5.1vh;
+    text-shadow:2px 2px blueviolet;
+    
+}
+.l3:hover{
+    font-size:5.1vh;
+    text-shadow:2px 2px blueviolet;
+    
+}
+.l4:hover{
+    font-size:5.1vh;
+    text-shadow:2px 2px blueviolet;
+    
+}
+.l5:hover{
+    font-size:5.1vh;
+    text-shadow:2px 2px blueviolet;
+    
+}
+
+
+
+
+
