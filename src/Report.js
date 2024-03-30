@@ -25,6 +25,7 @@ const Report = () => {
                     <option value="pnts">Prefer not to say</option>
                 </select>
         </form>
+        <div>hi</div>
       
     </>
   )
