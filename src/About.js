@@ -1,10 +1,17 @@
-import React from 'react'
+import React from 'react';
+import './components/style.css';
 
 const About = () => {
   return (
    <>
-   About Us
+   <div className='container' >
+    
+   </div>
+
+   
+   
    </>
+
   )
 }
 
