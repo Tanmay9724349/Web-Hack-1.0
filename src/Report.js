@@ -24,8 +24,18 @@ const Report = () => {
                     <option value="other">Other</option>
                     <option value="pnts">Prefer not to say</option>
                 </select>
+          <br/>
+          <br/>
+          <h3>Incident detail:</h3>
+          Date: <input type='date'/>
+          <br/>
+          <br/>
+          Location of the incident: <input type='text'/>
+          <br/>
+          <br/>
+          Description of the incident: <input type='text'/>
         </form>
-        <div>hi</div>
+      
       
     </>
   )
