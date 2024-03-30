@@ -24,6 +24,7 @@
     color:rgb(110, 230, 235);
 }
 /*styling elements of menu*/
+
 li{
   margin:30px;
   font-size: 20px;
@@ -63,7 +64,7 @@ i{
 /*hover on icon*/
 .l1:hover{
     font-size:5.1vh;
-    text-shadow:2px 2px blueviolet;
+    text-shadow:2px 2px rgb(233, 8, 177);
 
 }
 .l2:hover{
@@ -86,7 +87,10 @@ i{
     text-shadow:2px 2px blueviolet;
     
 }
-
+/*style for home image*/
+.caro{
+    height:60vh;
+}
 
 
 

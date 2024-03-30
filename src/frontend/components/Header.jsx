@@ -4,7 +4,7 @@ import './style.css';
 
 const Header = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary bg-dark " data-bs-theme="dark">
     <div className="container-fluid">
       <img src="https://img.freepik.com/free-vector/colorful-bird-illustration-gradient_343694-1741.jpg?size=338&ext=jpg&ga=GA1.1.1887574231.1711670400&semt=ais" className='logo' />
 
