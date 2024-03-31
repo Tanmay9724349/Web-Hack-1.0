@@ -1,30 +1,56 @@
-import  {useState} from 'react';
+// Filename - App.js
 
-export default function Report()
-{
-    const [name,setName] = useState('');
-    const [email,setEmail] = useState('');
-    const [phonenumber,setPhonenumber] = useState('');
-    const [age,setAge] = useState('');
-    const [gender,setGender] = useState('');
-    const [incidate,setIncidate] = useState('');
-    const [incilocation,setIncilocation] = useState('');
-    const [incidescription,setIncidescription] = useState('');
-    const [incitoh,setIncitoh] = useState(new Array(toh.length).fill(false));
-    const [witnessname,setWitnessname] = useState('');
-    const [witnesscontact,setWitnesscontact] = useState('');
-    const [additionalinfo,setAdditionalinfo] = useState('');
-    const [ack,setAck] = useState('false');
-    const [total,setTotal] =useState(0);
-    const tohc = (position) => {
-      const updatedincitoh = checkedState.map((item,index === position ? !item : item));
-      setIncitoh(updatedincitoh);
-      
-    };
+import React, { useState } from "react";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log('',name);
+function App() {
+	const [userinfo, setUserInfo] = useState({
+		languages: [],
+		response: [],
+	});
+  const [name,setName] = useState('');
+  const [email,setEmail] = useState('');
+  const [phonenumber,setPhonenumber] = useState('');
+  const [age,setAge] = useState('');
+  const [gender,setGender] = useState('');
+  const [incidate,setIncidate] = useState('');
+  const [incilocation,setIncilocation] = useState('');
+  const [incidescription,setIncidescription] = useState('');
+  const [witnessname,setWitnessname] = useState('');
+  const [witnesscontact,setWitnesscontact] = useState('');
+  const [additionalinfo,setAdditionalinfo] = useState('');
+  const [ack,setAck] = useState('false');
+
+	const handleChange = (e) => {
+		// Destructuring
+		const { value, checked } = e.target;
+		const { languages } = userinfo;
+
+		// Case 1 : The user checks the box
+		if (checked) {
+			setUserInfo({
+				languages: [...languages, value],
+				response: [...languages, value],
+			});
+		}
+
+		// Case 2 : The user unchecks the box
+		else {
+			setUserInfo({
+				languages: languages.filter(
+					(e) => e !== value
+				),
+				response: languages.filter(
+					(e) => e !== value
+				),
+			});
+		}
+	};
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log("",userinfo);
+    console.log('',name);
         console.log('',email);
         console.log('',phonenumber);
         console.log('',age);
@@ -32,113 +58,181 @@ export default function Report()
         console.log('',incidate);
         console.log('',incilocation);
         console.log('',incidescription);
-        console.log('',incitoh);
         console.log('',witnessname);
         console.log('',witnesscontact);
         console.log('',additionalinfo);
         console.log('',ack);
-        alert("Report saved");
-    };
+  }
 
-    return (
-        <form>
-          Name: <input type='text' value={name} onChange={(e) => 
-setName(e.target.value)} required />
-          <br />
-          <br />
-          Email: <input type='email' value={email} onChange={(e) => 
-setEmail(e.target.value)} required />
-          <br />
-          <br />
-          Phone number: <input type='text' value={phonenumber} onChange={(e) => 
-setPhonenumber(e.target.value)} required />
-          <br />
-          <br />
-          Age: <input type='text' value={age} onChange={(e) => 
-setAge(e.target.value)} required />
-          <br />
-          <br />
-          Gender: <select name="selectedOption" value={gender} onChange={(e) => 
-setGender(e.target.value)} required>
-            <option value=""></option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-            <option value="pnts">Prefer not to say</option>
-          </select>
-          <br />
-          <br />
-          <h3>Incident detail:</h3>
-          Date: <input type='date' value={incidate} onChange={(e) => 
-setIncidate(e.target.value)} required />
-          <br />
-          <br />
-          Location of the incident: <input type='text' value={incilocation} onChange={(e) => 
-setIncilocation(e.target.value)} required />
-          <br />
-          <br />
-          Description of the incident: <input type='text' value={incidescription} onChange={(e) => 
-setIncidescription(e.target.value)} required />
-          <br />
-          <br />
-          <h3>Types of Harrasment</h3>
-          <br />
-          <br />
-          <input type="checkbox" id="accept" name="accept" value="vh" />Verbal Harassment
-          <br />
-          <br />
-          <input type="checkbox" id="accept" name="accept" value="nvh" />Non-Verbal Harassment
-          <br />
-          <br />
-          <input type="checkbox" id="accept" name="accept" value="ph" />Physical Harassment
-          <br />
-          <br />
-          <input type="checkbox" id="accept" name="accept" value="qpqh" />Quid Pro Qua Harrassment
-          <br />
-          <br />
-          <input type="checkbox" id="accept" name="accept" value="hwh" />Hostile Work Harassment
-          <br />
-          <br />
-          <input type="checkbox" id="accept" name="accept" value="csh" />Cyber Sexual Harassment
-          <br />
-          <br />
-          <input type="checkbox" id="accept" name="accept" value="eh" />Environmental  Harassment
-          <br />
-          <br />
-          <input type="checkbox" id="accept" name="accept" value="dh" />Discriminatory Harassment
-          <br />
-          <br />
-          <input type="checkbox" id="accept" name="accept" value="o" />Other<br />
-          <input type='text' />
-          <br />
-          <br />
-          <h3>Witness information(if applicable):</h3>
-          <br />
-          <br />
-          Name: <input type='text' />
-          <br />
-          <br />
-          Contact No:<input type='text' />
-          <br />
-          <br />
-          Additional Comment:<input type='text' />
-          <br />
-          <br />
-          <br />
-          <input type="checkbox" id="ack" name="ack" value="ack" />Please read and acknowledge the following:
-    
-          <br/>☑ I acknowledge that the information provided in this report will be kept confidential to the extent possible, and will only be disclosed to those involved in the investigation process.
-    
-          Information on how the report will be handled:
-    
-          All reports of harassment will be taken seriously and investigated promptly.
-          Only authorized personnel, such as HR representatives or designated investigators, will have access to the information provided in this report.
-          The information will be used solely for the purpose of addressing and resolving the reported incident of harassment.
-          Any disclosure of information will be in accordance with applicable laws and organizational policies. 
-          <br/>
-          <br/>
-          <button type='submit' onClick={handleSubmit}> Submit </button>
-    
-        </form>
-        )
+	return (
+		<>
+			<div className="container-fluid top ">
+				<div className="container mt-5 pb-5 pt-5">
+					<h3 className="form-head-contact-h3 ">
+					</h3>
+
+					<form>
+						<div className="row">
+							<div className="col-md-6">
+								<div className="form-check m-3">
+									<input
+										className="form-check-input"
+										type="checkbox"
+										name="languages"
+										value="Javascript"
+										id="flexCheckDefault"
+										onChange={
+											handleChange
+										}
+									/>
+									<label
+										className="form-check-label"
+										htmlFor="flexCheckDefault"
+									>
+										 Javascript
+									</label>
+								</div>
+								<div className="form-check m-3">
+									<input
+										className="form-check-input"
+										type="checkbox"
+										name="languages"
+										value="Python"
+										id="flexCheckDefault"
+										onChange={
+											handleChange
+										}
+									/>
+									<label
+										className="form-check-label"
+										htmlFor="flexCheckDefault"
+									>
+										 Python
+									</label>
+								</div>
+								<div className="form-check m-3">
+									<input
+										className="form-check-input"
+										type="checkbox"
+										name="languages"
+										value="Java"
+										id="flexCheckDefault"
+										onChange={
+											handleChange
+										}
+									/>
+									<label
+										className="form-check-label"
+										htmlFor="flexCheckDefault"
+									>
+										 Java
+									</label>
+								</div>
+								<div className="form-check m-3">
+									<input
+										className="form-check-input"
+										type="checkbox"
+										name="languages"
+										value="PHP"
+										id="flexCheckDefault"
+										onChange={
+											handleChange
+										}
+									/>
+									<label
+										className="form-check-label"
+										htmlFor="flexCheckDefault"
+									>
+										 PHP
+									</label>
+								</div>
+							</div>
+							<div className="col-md-6">
+								<div className="form-check m-3">
+									<input
+										className="form-check-input"
+										type="checkbox"
+										name="languages"
+										value="C#"
+										id="flexCheckDefault"
+										onChange={
+											handleChange
+										}
+									/>
+									<label
+										className="form-check-label"
+										htmlFor="flexCheckDefault"
+									>
+										 C#
+									</label>
+								</div>
+								<div className="form-check m-3">
+									<input
+										className="form-check-input"
+										type="checkbox"
+										name="languages"
+										value="C++"
+										id="flexCheckDefault"
+										onChange={
+											handleChange
+										}
+									/>
+									<label
+										className="form-check-label"
+										htmlFor="flexCheckDefault"
+									>
+										 C++
+									</label>
+								</div>
+								<div className="form-check m-3">
+									<input
+										className="form-check-input"
+										type="checkbox"
+										name="languages"
+										value="C"
+										id="flexCheckDefault"
+										onChange={
+											handleChange
+										}
+									/>
+									<label
+										className="form-check-label"
+										htmlFor="flexCheckDefault"
+									>
+										 C
+									</label>
+								</div>
+								<div className="form-check m-3">
+									<input
+										className="form-check-input"
+										type="checkbox"
+										name="languages"
+										value="Typescript"
+										id="flexCheckDefault"
+										onChange={
+											handleChange
+										}
+									/>
+									<label
+										className="form-check-label"
+										htmlFor="flexCheckDefault"
+									>
+										 Typescript
+									</label>
+								</div>
+							</div>
+						</div>
+
+						
+            <br/>
+            <br/>
+            <br/>
+            <button type="submit" onClick={handleSubmit}>Submit</button>
+					</form>
+				</div>
+			</div>
+		</>
+	);
 }
+
+export default App;
