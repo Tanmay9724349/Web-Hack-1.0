@@ -7,9 +7,8 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 function App() {
-	const [userinfo, setUserInfo] = useState({
-		languages: [],
-		response: [],
+	const [Harassment, setHarassment] = useState({
+		toh: []
 	});
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
@@ -23,36 +22,33 @@ function App() {
 	const [witnesscontact, setWitnesscontact] = useState('');
 	const [additionalinfo, setAdditionalinfo] = useState('');
 	const [ack, setAck] = useState('false');
+	const [other,setOther] = useState('');
 
 	const handleChange = (e) => {
 		// Destructuring
 		const { value, checked } = e.target;
-		const { languages } = userinfo;
+		const { toh } = Harassment;
 
 		// Case 1 : The user checks the box
 		if (checked) {
-			setUserInfo({
-				languages: [...languages, value],
-				response: [...languages, value],
+			setHarassment({
+				toh: [...toh, value],
 			});
 		}
 
 		// Case 2 : The user unchecks the box
 		else {
-			setUserInfo({
-				languages: languages.filter(
+			setHarassment({
+				toh: toh.filter(
 					(e) => e !== value
-				),
-				response: languages.filter(
-					(e) => e !== value
-				),
+				)
 			});
 		}
 	};
 	const handleSubmit = (e) => {
 		e.preventDefault()
-		console.log("", userinfo);
-		console.log('', name);
+		console.log("", Harassment);
+		console.log("", name);
 		console.log('', email);
 		console.log('', phonenumber);
 		console.log('', age);
@@ -60,9 +56,7 @@ function App() {
 		console.log('', incidate);
 		console.log('', incilocation);
 		console.log('', incidescription);
-		console.log('', witnessname);
-		console.log('', witnesscontact);
-		console.log('', additionalinfo);
+		console.log('', other);
 		console.log('', ack);
 	}
 
@@ -76,59 +70,36 @@ function App() {
 					<form>
 						<Form.Group>
 							<Form.Label>Enter your full name:</Form.Label>
-							<Form.Control type="text"
-								placeholder="Enter your full name" />
+							<input class="form-control" type="text"
+								placeholder="Enter your full name" value={name} onChange={(e) => setName(e.target.value)} />
 						</Form.Group>
 						<br />
 						<Form.Group>
 							<Form.Label>Enter your email address:</Form.Label>
-							<Form.Control type="email"
-								placeholder="Enter your your email address" />
+							<input class="form-control" type="email"
+								placeholder="Enter your your email address" value={email} onChange={(e) => setEmail(e.target.value)} />
 						</Form.Group>
 						<br />
 						<Form.Group>
 							<Form.Label>Enter your Contact Number:</Form.Label>
-							<Form.Control type="number" placeholder="Enter your age" />
+							<input class="form-control" type="number" placeholder="Enter your Number" value={phonenumber} onChange={(e) => setPhonenumber(e.target.value)} />
 						</Form.Group>
 						<br />
 						<Form.Group>
 							<Form.Label>Enter your age:</Form.Label>
-							<Form.Control type="number" placeholder="Enter your age" />
+							<input class="form-control" type="number" placeholder="Enter your age" value={age} onChange={(e) => setAge(e.target.value)}/>
 						</Form.Group>
 						<br />
-						<label
-							className="form-check-label"
-							htmlFor="flexCheckDefault"
-						>
-							Gender:
-						</label>
-						{['radio'].map((type) => (
-							<div key={`inline-${type}`} className="mb-3">
-								<Form.Check
-									inline
-									label="Female"
-									name="group1"
-									type={type}
-									id={`inline-${type}-1`}
-								/>
-								<Form.Check
-									inline
-									label="Male"
-									name="group1"
-									type={type}
-									id={`inline-${type}-2`}
-								/>
-								<Form.Check
-									inline
-									label="Other"
-									name="group1"
-									type={type}
-									id={`inline-${type}-3`}
-								/>
-
-							</div>
-						))}
-
+						
+						Gender: <select name="selectedOption" class="form-control" required value={gender} onChange={(e) => setGender(e.target.value)}> 
+            <option value=""></option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+            <option value="pnts">Prefer not to say</option>
+          </select>
+		  <br/>
+		  <br/>
 						<label
 							className="form-check-label"
 							htmlFor="flexCheckDefault"
@@ -143,7 +114,7 @@ function App() {
 							Date:
 						</label>
 						<br />
-						<input type="date" />
+						<input class="form-control" type="date" value={incidate} onChange={(e) => setIncidate(e.target.value)}/>
 						<br />
 						<label
 							className="form-check-label"
@@ -154,16 +125,16 @@ function App() {
 						</label>
 						<br />
 
-						<textarea></textarea>
+						<textarea value={incilocation} onChange={(e) => setIncilocation(e.target.value)}></textarea>
 						<br />
 						<label
 							className="form-check-label"
 							htmlFor="flexCheckDefault"
 						>
-							Description of Harrasment:
+							Description of Harassment:
 						</label>
 						<br />
-						<textarea></textarea>
+						<textarea value={incidescription} onChange={(e) => setIncidescription(e.target.value)}></textarea>
 
 						<br />
 
@@ -173,18 +144,17 @@ function App() {
 							className="form-check-label"
 							htmlFor="flexCheckDefault"
 						>
-							<b>Type Of Harrasment:</b>
+							<b>Type Of Harassment:</b>
 						</label>
 
 
 						<div className="row">
 							<div className="col-md-6">
 								<div className="form-check m-3">
-									<input
-										className="form-check-input"
+									<input className="form-check-input form-control"
 										type="checkbox"
-										name="languages"
-										value="Javascript"
+										name="toh"
+										value="Verbal Harassment"
 										id="flexCheckDefault"
 										onChange={
 											handleChange
@@ -194,15 +164,14 @@ function App() {
 										className="form-check-label"
 										htmlFor="flexCheckDefault"
 									>
-										Javascript
+										Verbal Harassment
 									</label>
 								</div>
 								<div className="form-check m-3">
-									<input
-										className="form-check-input"
+									<input className="form-check-input form-control"
 										type="checkbox"
-										name="languages"
-										value="Python"
+										name="toh"
+										value="Non-Verbal Harassment"
 										id="flexCheckDefault"
 										onChange={
 											handleChange
@@ -212,15 +181,14 @@ function App() {
 										className="form-check-label"
 										htmlFor="flexCheckDefault"
 									>
-										Python
+										Non-Verbal Harassment
 									</label>
 								</div>
 								<div className="form-check m-3">
-									<input
-										className="form-check-input"
+									<input className="form-check-input form-control"
 										type="checkbox"
-										name="languages"
-										value="Java"
+										name="toh"
+										value="Physical Harassment"
 										id="flexCheckDefault"
 										onChange={
 											handleChange
@@ -230,15 +198,14 @@ function App() {
 										className="form-check-label"
 										htmlFor="flexCheckDefault"
 									>
-										Java
+										Physical Harassment
 									</label>
 								</div>
 								<div className="form-check m-3">
-									<input
-										className="form-check-input"
+									<input className="form-check-input form-control"
 										type="checkbox"
-										name="languages"
-										value="PHP"
+										name="toh"
+										value="Quid Pro Quo Harassment"
 										id="flexCheckDefault"
 										onChange={
 											handleChange
@@ -248,17 +215,16 @@ function App() {
 										className="form-check-label"
 										htmlFor="flexCheckDefault"
 									>
-										PHP
+										Quid Pro Quo Harassment
 									</label>
 								</div>
 							</div>
 							<div className="col-md-6">
 								<div className="form-check m-3">
-									<input
-										className="form-check-input"
+									<input className="form-check-input form-control"
 										type="checkbox"
-										name="languages"
-										value="C#"
+										name="toh"
+										value="Hostile Work Harassment"
 										id="flexCheckDefault"
 										onChange={
 											handleChange
@@ -268,15 +234,14 @@ function App() {
 										className="form-check-label"
 										htmlFor="flexCheckDefault"
 									>
-										C#
+										Hostile Work Harassment
 									</label>
 								</div>
 								<div className="form-check m-3">
-									<input
-										className="form-check-input"
+									<input className="form-check-input form-control"
 										type="checkbox"
-										name="languages"
-										value="C++"
+										name="toh"
+										value="Cyber Sexual Harassment"
 										id="flexCheckDefault"
 										onChange={
 											handleChange
@@ -286,15 +251,14 @@ function App() {
 										className="form-check-label"
 										htmlFor="flexCheckDefault"
 									>
-										C++
+										Cyber Sexual Harassment
 									</label>
 								</div>
 								<div className="form-check m-3">
-									<input
-										className="form-check-input"
+									<input className="form-check-input form-control"
 										type="checkbox"
-										name="languages"
-										value="C"
+										name="toh"
+										value="Enviromental Harassment"
 										id="flexCheckDefault"
 										onChange={
 											handleChange
@@ -304,15 +268,14 @@ function App() {
 										className="form-check-label"
 										htmlFor="flexCheckDefault"
 									>
-										C
+										Enviromental Harassment
 									</label>
 								</div>
 								<div className="form-check m-3">
-									<input
-										className="form-check-input"
+									<input className="form-check-input form-control"
 										type="checkbox"
-										name="languages"
-										value="Typescript"
+										name="toh"
+										value="Discriminatory Harassment"
 										id="flexCheckDefault"
 										onChange={
 											handleChange
@@ -322,7 +285,7 @@ function App() {
 										className="form-check-label"
 										htmlFor="flexCheckDefault"
 									>
-										Typescript
+										Discriminatory Harassment
 									</label>
 								</div>
 							</div>
@@ -337,17 +300,17 @@ function App() {
 							<b>If other then describe:</b>
 						</label>
 						<br />
-						<textarea>
+						<textarea value={other} onChange={(e) => setOther(e.target.value)}>
 						</textarea>
-						<br/>
 						<br />
-						<input type="checkbox"/>
-						Please read and acknowledge the following:<br/>
+						<br />
+						<input  type="checkbox" value={ack} onChange={(e) => setAck(e.target.value)}/>
+						Please read and acknowledge the following:<br />
 
 						I acknowledge that the information provided in this report will be kept confidential to the extent possible, and will only be disclosed to those involved in the investigation process.
-						<br/>
+						<br />
 						Information on how the report will be handled:
-<br/>
+						<br />
 						All reports of harassment will be taken seriously and investigated promptly.
 						Only authorized personnel, such as HR representatives or designated investigators, will have access to the information provided in this report.
 						The information will be used solely for the purpose of addressing and resolving the reported incident of harassment.
