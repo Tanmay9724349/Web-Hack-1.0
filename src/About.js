@@ -5,11 +5,11 @@ const About = () => {
   return (
     <>
 
-      <div className="containers">
-        <div className="rows">
+      <div className="container">
+        <div className="row">
           <div className="heading"><h1><u>OUR VISION</u></h1></div>
 
-          <div className="cols col-lg-6 col-sm-12">
+          <div className="col col-lg-6 col-sm-12">
             <p>
               We envision a world where every individual feels safe, respected, and
               valued, free from the threat of sexual harassment. Our vision is to
@@ -27,7 +27,7 @@ const About = () => {
 
 
           </div>
-          <div className="cols col-lg-6 col-sm-12">
+          <div className="col col-lg-6 col-sm-12">
             <img src="https://4genderjustice.org/wp-content/uploads/2020/02/giphy.gif" className='vision' />
 
           </div>
@@ -35,13 +35,13 @@ const About = () => {
         <br />
         <hr />
         <br />
-        <div className="rows">
+        <div className="row">
           <div className="heading"><h1><u>OUR VALUES</u></h1></div>
-          <div className="cols col-lg-6 col-sm-12">
+          <div className="col col-lg-6 col-sm-12">
             <img src="https://www.unwomen.org/sites/default/files/Headquarters/Images/Sections/News/Stories/2020/11/16Days-Action-Services.gif?t=1642408411" className='vision' />
 
           </div>
-          <div className="cols col-lg-6 col-sm-12">
+          <div className="col col-lg-6 col-sm-12">
             <p>
               <ul>
                 <li>
@@ -78,9 +78,9 @@ const About = () => {
         <br />
         <hr />
         <br />
-        <div className="rows">
+        <div className="row">
           <div className="heading"><h1><u>OUR INITIATIVES</u></h1></div>
-          <div className="cols col-lg-6 col-sm-12">
+          <div className="col col-lg-6 col-sm-12">
             <p>Through our initiatives, we aim to:</p>
             <ul>
               <li>
@@ -116,7 +116,7 @@ const About = () => {
             </p>
 
           </div>
-          <div className="cols col-lg-6 col-sm-12">
+          <div className="col col-lg-6 col-sm-12">
             <img src="https://www.unwomen.org/sites/default/files/Headquarters/Images/Sections/News/Stories/2020/11/16Days-Action-Conversation.gif?t=1642408411" className='vision' />
 
           </div>
