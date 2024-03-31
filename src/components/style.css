@@ -34,8 +34,14 @@ li{
   font-size: 20px;
   font-weight: 500;
 }
+.menu{
+    text-align: center;
+}
 .menu:hover{
-    text-shadow:2px 2px rgb(6, 111, 122);
+    border:2px solid rgb(6, 111, 122);
+    border-radius: 30px;
+    box-shadow: 2px 2px rgb(6, 111, 122);
+    text-align: center;
 
 }
 /*footer*/
