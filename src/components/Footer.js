@@ -7,20 +7,20 @@ const Footer = () => {
         <h1><u>OUR NGOs</u></h1>
         <br/><br/>
         <div className="container ">
-            <div className="row">
-                <div className="col col-sm-12 col-lg-4"><b>RAMESHBHAI CHOTALIYA</b><br/>
+            <div className="row  footfont">
+                <div className="col col-sm-12 col-lg-4  footfont"><b>RAMESHBHAI CHOTALIYA</b><br/>
                <u>Address:</u> "Ram Krupa Complex",<br/>
                Raiya Road,Rajkot.<br/>
                 <u>Phone:</u>+91 1234567890
 
                 </div>
-                <div className="col col-sm-12 col-lg-4"><b>PRATHNABEN GAGLANI</b><br/>
+                <div className="col col-sm-12 col-lg-4  footfont"><b>PRATHNABEN GAGLANI</b><br/>
                 <u>Address:</u> "Chamunda Complex",<br/>
                Amin Marg,Rajkot.<br/>
                 <u>Phone:</u>+91 1234569990
                 
                 </div>
-                <div className="col col-sm-12 col-lg-4"><b>RAMABEN PATEL</b><br/>
+                <div className="col col-sm-12 col-lg-4  footfont"><b>RAMABEN PATEL</b><br/>
                 <u>Address:</u> "Jai Shree Krishna Complex",<br/>
                Nana Mava Road,Rajkot.<br/>
                 <u>Phone:</u>+91 1234557890
