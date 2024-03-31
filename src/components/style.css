@@ -68,27 +68,26 @@ i{
 /*hover on icon*/
 .l1:hover{
     font-size:5.1vh;
-    text-shadow:2px 2px rgb(233, 8, 177);
+    text-shadow: 1px 1px 2px black, 0 0 25px rgb(255, 7, 234), 0 0 25px rgb(82, 11, 76);
 
 }
 .l2:hover{
     font-size:5.1vh;
-    text-shadow:2px 2px blueviolet;
+    text-shadow: 1px 1px 2px black, 0 0 25px rgb(157, 236, 250), 0 0 25px rgb(117, 255, 255);
     
 }
 .l3:hover{
     font-size:5.1vh;
-    text-shadow:2px 2px blueviolet;
+    text-shadow: 1px 1px 2px black, 0 0 25px rgb(29, 112, 18), 0 0 25px rgb(44, 240, 44);
     
 }
 .l4:hover{
     font-size:5.1vh;
-    text-shadow:2px 2px blueviolet;
-    
+    text-shadow: 1px 1px 2px black, 0 0 25px rgb(255, 255, 255), 0 0 25px rgb(255, 255, 255);
 }
 .l5:hover{
     font-size:5.1vh;
-    text-shadow:2px 2px blueviolet;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 25px darkblue;
     
 }
 /*style for home image*/
@@ -97,16 +96,16 @@ i{
 }
 
 /*style for about us page*/
-.containers{
+.container{
     text-align: center;
 } 
-.containers h1{
+.container h1{
     font-family: "Spectral SC", serif;
     font-weight: 800;
     font-style: normal;
     font-size: 5vh;
 }
-.cols{
+.col{
     font-family: "Grenze Gotisch", serif;
   font-optical-sizing: auto;
   font-weight: 500;
@@ -115,9 +114,13 @@ i{
 }
 .vision{
     height:80vh;
+    width: 50vh;
+    margin-top: 10vh;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
- .cols li{
+ .col li{
     font-family: "Grenze Gotisch", serif;
   font-optical-sizing: auto;
   font-weight: 500;
@@ -125,8 +128,8 @@ i{
   font-size:3vh;
  }
  /*style for carousal of information page*/
- .infocaro{
-    height: 80vh;
+ .carousel-item{
+    height: 70vh;
  }
 
 
