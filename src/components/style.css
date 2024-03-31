@@ -22,6 +22,10 @@
 }
  a .free{
     color:rgb(110, 230, 235);
+    font-size: 8vh;
+}
+a .be{
+    font-size: 8vh;
 }
 /*styling elements of menu*/
 
@@ -93,16 +97,16 @@ i{
 }
 
 /*style for about us page*/
-.container{
+.containers{
     text-align: center;
 } 
-.container h1{
+.containers h1{
     font-family: "Spectral SC", serif;
     font-weight: 800;
     font-style: normal;
     font-size: 5vh;
 }
-.col{
+.cols{
     font-family: "Grenze Gotisch", serif;
   font-optical-sizing: auto;
   font-weight: 500;
@@ -113,12 +117,16 @@ i{
     height:80vh;
 
 }
- .col li{
+ .cols li{
     font-family: "Grenze Gotisch", serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
   font-size:3vh;
+ }
+ /*style for carousal of information page*/
+ .infocaro{
+    height: 80vh;
  }
 
 
