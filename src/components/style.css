@@ -142,4 +142,30 @@ i{
     height: 70vh;
  }
 
-
+/*designing report*/
+form{
+    border:2px solid black;
+    padding: 3%;
+    background-color: transparent;
+    backdrop-filter: blur(50px);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-family: "Spectral SC", serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: rgb(188, 146, 228);
+    font-size: 3vh;
+    
+}
+input{
+    border-radius: 10px;
+    background-color: rgb(10, 9, 9);
+    color: white;
+    margin-left: 2%;
+    width: 60%;
+    height: 4vh;
+}
+.top{
+    background-color: rgb(89, 37, 185);
+}

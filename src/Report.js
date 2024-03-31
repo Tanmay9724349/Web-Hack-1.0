@@ -63,7 +63,7 @@ function App() {
 	return (
 		<>
 			<div className="container-fluid top ">
-				<div className="container mt-5 pb-5 pt-5">
+				<div className="container  pb-5 pt-5">
 					<h3 className="form-head-contact-h3 ">
 					</h3>
 
